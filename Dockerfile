@@ -1,3 +1,3 @@
 FROM headscale/headscale:latest-debug
-RUN mkdir -p /etc/headscale && touch /etc/headscale/config.yaml
+RUN ["/busybox/sh", "-c", "mkdir -p /etc/headscale && touch /etc/headscale/config.yaml"]
 CMD ["headscale", "serve"]
